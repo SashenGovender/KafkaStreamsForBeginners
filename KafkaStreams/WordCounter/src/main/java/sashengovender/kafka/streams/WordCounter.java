@@ -18,7 +18,7 @@ import java.util.Properties;
 public class WordCounter {
 
     //Sets all the required Consumer, Producer, Kafka properties
-    private static Properties SetKafkaProperties() {
+    private static Properties GetKafkaProperties() {
         Properties config = new Properties();
         config.setProperty(StreamsConfig.APPLICATION_ID_CONFIG, "wordcounter-application");
         config.setProperty(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
@@ -29,12 +29,12 @@ public class WordCounter {
     }
 
     //Define the stream processing that will be done on the input topic
-    public Topology createTopology() {
+    public Topology CreateTopology() {
         StreamsBuilder builder = new StreamsBuilder();
 
-        KStream<String, String> textLines = builder.stream("words-input");        //Get Kafka Stream
+        KStream<String, String> inputTextStream = builder.stream("words-input");        //Get Kafka Stream
 
-        KTable<String, Long> wordCounts = textLines
+        KTable<String, Long> wordCounts = inputTextStream
                 .mapValues(textLine -> textLine.toLowerCase())//map values to lowercase
                 .flatMapValues(textLine -> Arrays.asList(textLine.split("\\W+")))//values split by space regex
                 .selectKey((key, word) -> word)// change the current null key to use value as the key
@@ -49,11 +49,11 @@ public class WordCounter {
 
     public static void main(String[] args) {
 
-        Properties config = SetKafkaProperties();
+        Properties config = GetKafkaProperties();
 
         WordCounter wordCountApp = new WordCounter();
 
-        KafkaStreams streams = new KafkaStreams(wordCountApp.createTopology(), config);
+        KafkaStreams streams = new KafkaStreams(wordCountApp.CreateTopology(), config);
         streams.start();
 
         System.out.println(streams.toString());//print the topology

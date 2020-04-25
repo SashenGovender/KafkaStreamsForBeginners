@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>WordCounter</artifactId>
+
     <dependencies>
 
         <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-streams -->
@@ -19,6 +20,7 @@
             <version>2.5.0</version>
         </dependency>
 
+        <!--for logging purposes-->
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -37,6 +39,7 @@
 
     <build>
         <plugins>
+
             <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
