@@ -15,7 +15,7 @@ Please follow the below steps to setup the solution on your machine.
 * [Kafka](https://kafka.apache.org/downloads) - Choose the recommended Scala binary and download. I downloaded kafka to my c:\ drive .ie c:\kafka_2.12-2.5.0
 
 ### Kafka Setup
-#### Zookepper
+#### Zookeeper
 * Open the cmd prompt in the location where kafka was extracted
 * Start Kafka Zookeeper. Zookeeper is at localhost:2181
 ```
