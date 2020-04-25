@@ -2,8 +2,8 @@
 
 This repository serves as an introduction into the kafka streams world. It will consist of several small projects demonstrating kafka and its use cases. Note that these projects have been written on a windows machine
 
-These projects include
-* <update>
+These projects include:
+* A simple counting application
 
 ## Getting Started
 Please follow the below steps to setup the solution on your machine. 
@@ -13,9 +13,6 @@ Please follow the below steps to setup the solution on your machine.
 * [Maven 3.6](https://maven.apache.org/install.html) - Please follow this [guide](https://howtodoinjava.com/maven/how-to-install-maven-on-windows/)
 * [IntelliJ IDE](https://www.jetbrains.com/idea/download/#section=windows)
 * [Kafka](https://kafka.apache.org/downloads) - Choose the recommended Scala binary and download
-
-### Installing
-* Pull the code from github into your ide
 
 ### Kafka Setup
 #### Zookepper
@@ -66,9 +63,9 @@ bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 ^
 ```
 bin\windows\kafka-run-class.bat org.apache.kafka.streams.firstStreamsApplication
 ```
-#### NOtes
-*Do not close any cmd prompts when running kafka
-*Kafka has been setup using the default settings
+#### Notes
+* Do not close any cmd prompts when running kafka
+* Kafka has been setup using the default settings
  
 ## Resources
 
