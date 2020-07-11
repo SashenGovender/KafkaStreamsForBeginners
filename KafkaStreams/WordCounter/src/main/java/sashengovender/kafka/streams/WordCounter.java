@@ -20,9 +20,11 @@ public class WordCounter {
     //Sets all the required Consumer, Producer, Kafka properties
     private static Properties GetKafkaProperties() {
         Properties config = new Properties();
-        config.setProperty(StreamsConfig.APPLICATION_ID_CONFIG, "wordcounter-application");
-        config.setProperty(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
-        config.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+        config.setProperty(StreamsConfig.APPLICATION_ID_CONFIG, "wordcounter-application"); // Specific fore streams application and used for
+        // consumer group.id == application.id
+        // prefix for internal changelog topics
+        config.setProperty(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092"); // need to connect to kafka
+        config.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest"); // when application starts, when should it start consuming data from
         config.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         config.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         return config;
