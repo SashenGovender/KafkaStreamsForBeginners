@@ -3,7 +3,9 @@
 This repository serves as an introduction into the kafka streams world. It will consist of several small projects demonstrating kafka and its use cases. Note that these projects have been written on a windows machine
 
 These projects include:
-* A simple counting application
+* WordCounter -  Counts the number of times a word have been streamed. ie Hello 5
+* FavouriteFood - A running count on a favourite food associated with users. Its important to note when a person favourite food changes, the food count will change
+* spring-kafka-processor - Counts the number of times a word have been streamed using a spring boot application. Displays stream information every 5 seconds
 
 ## Getting Started
 Please follow the below steps to setup the solution on your machine. 
@@ -31,8 +33,8 @@ Please follow the below steps to setup the solution on your machine.
 * Open the cmd prompt in the location where kafka was extracted
 * Create Input Topic. It is important that all topics are created before they can be used in the kafka applications. Use the same cmd prompt to create all topics. Topics can be any name
 ```
-.\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic streams-input-topic
-.\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic streams-output-topic
+.\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic words-input
+.\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic words-count
 ```
 * Verify the topic has been created
 ```
@@ -42,15 +44,20 @@ Please follow the below steps to setup the solution on your machine.
 * Open the cmd prompt in the location where kafka was extracted
 * Create the Kafka Producer. Remember to include the topic name to publish to
 ```
-.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic streams-input-topic
+.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic words-input
 ```
 #### Kafka Consumer
 * Open the cmd prompt in the location where kafka was extracted
 * Create the Kafka Consumer. Only the beginning and topic settings are compulsory
 ```
 .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 ^
-    --topic streams-input-topic ^
+    --topic words-count ^
     --from-beginning ^
+	--formatter kafka.tools.DefaultMessageFormatter ^
+    --property print.key=true ^
+    --property print.value=true ^
+    --property key.deserializer=org.apache.kafka.common.serialization.StringDeserializer ^
+    --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
 ```
 #### Start Kafka Stream Application
 * Using the cmd from the Kafka topic creation (or open a new cmd)
