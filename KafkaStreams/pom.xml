@@ -9,8 +9,11 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>WordCounter</module>
+        <module>basic-spring-kafka-processor</module>
+        <module>complex-spring-kafka-processor</module>
         <module>FavouriteFood</module>
+        <module>spring-kafka-consumer</module>
+        <module>WordCounter</module>
     </modules>
 
 </project>
