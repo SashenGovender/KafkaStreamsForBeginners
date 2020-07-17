@@ -30,13 +30,13 @@ import java.util.Properties;
 @EnableKafka
 @EnableKafkaStreams
 @EnableScheduling
-public class WordCountProcessor {
+public class WordCountDSLProcessor {
 
   private final KafkaConfiguration kafkaConfig;
-  private static Logger logger = LoggerFactory.getLogger(WordCountProcessor.class);
+  private static Logger logger = LoggerFactory.getLogger(WordCountDSLProcessor.class);
   private KafkaStreams wordCountKStream;
 
-  public WordCountProcessor(KafkaConfiguration kafkaConfig) {
+  public WordCountDSLProcessor(KafkaConfiguration kafkaConfig) {
     System.out.println("WordCountProcessor Constructor");
     this.kafkaConfig = kafkaConfig;
   }
