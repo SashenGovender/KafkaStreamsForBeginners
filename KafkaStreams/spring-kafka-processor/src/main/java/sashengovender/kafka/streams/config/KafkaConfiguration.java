@@ -7,22 +7,22 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "spring.kafka")
 public class KafkaConfiguration {
 
-    private String bootstrapServers;
-    private KafkaStreamsConfig streams;
+  private String bootstrapServers;
+  private KafkaStreamsConfig streams;
 
-    public String getBootstrapServers() {
-        return bootstrapServers;
-    }
+  public String getBootstrapServers() {
+    return bootstrapServers;
+  }
 
-    public void setBootstrapServers(String bootstrapServers) {
-        this.bootstrapServers = bootstrapServers;
-    }
+  public void setBootstrapServers(String bootstrapServers) {
+    this.bootstrapServers = bootstrapServers;
+  }
 
-    public KafkaStreamsConfig getStreams() {
-        return streams;
-    }
+  public KafkaStreamsConfig getStreams() {
+    return streams;
+  }
 
-    public void setStreams(KafkaStreamsConfig streams) {
-        this.streams = streams;
-    }
+  public void setStreams(KafkaStreamsConfig streams) {
+    this.streams = streams;
+  }
 }

@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringKafkaProcessorApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringKafkaProcessorApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(SpringKafkaProcessorApplication.class, args);
+  }
 
 }
