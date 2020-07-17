@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>sashengovender.kafka.streams</groupId>
-	<artifactId>spring-kafka-processor</artifactId>
+	<artifactId>complex-spring-kafka-processor</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-kafka-processor</name>
+	<name>complex-spring-kafka-processor</name>
 	<description>A demo project using spring to create a kafka streams application</description>
 
 	<properties>

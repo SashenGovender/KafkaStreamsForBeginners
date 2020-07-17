@@ -5,7 +5,8 @@ This repository serves as an introduction into the kafka streams world. It will 
 These projects include:
 * WordCounter -  Counts the number of times a word have been streamed. ie Hello 5
 * FavouriteFood - A running count on a favourite food associated with users. Its important to note when a person favourite food changes, the food count will change
-* spring-kafka-processor - Counts the number of times a word have been streamed using a spring boot application. Displays stream information every 5 seconds
+* basic-spring-kafka-processor - Counts the number of times a word have been streamed using a spring boot application. Displays stream information every 5 seconds
+* complex-spring-kafka-processor - Receives a KeyValue String word pair from a stream and does a custom process to add the record to a state store. A transformer is then used to schedule a punctuator which will check every 10 seconds if there are words greater than 15 characters in the state store. if this is the case, the word is then removed from the store and streamed to a different topic
 * spring-kafka-consumer - A simple kafka consumer service which consumers of two topics.The first topic expects a Player object value while the other topic expects a Json string value
 
 ## Getting Started

@@ -5,6 +5,7 @@ public class KafkaStreamsConfig {
   private String applicationId;
   private String inputTopic;
   private String outputTopic;
+  private String stateStoreName;
 
   public String getApplicationId() {
     return applicationId;
@@ -28,5 +29,13 @@ public class KafkaStreamsConfig {
 
   public void setOutputTopic(String outputTopic) {
     this.outputTopic = outputTopic;
+  }
+
+  public String getStateStoreName() {
+    return stateStoreName;
+  }
+
+  public void setStateStoreName(String stateStoreName) {
+    this.stateStoreName = stateStoreName;
   }
 }
