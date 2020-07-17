@@ -10,7 +10,7 @@ These projects include:
 * spring-kafka-consumer - A simple kafka consumer service which consumers of two topics.The first topic expects a Player object value while the other topic expects a Json string value
 
 ## Getting Started
-Please follow the below steps to setup the solution on your machine. 
+Please follow the below steps to setup the solution on your machine.   
 
 ### Prerequisites
 * [Java 14 jdk](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html)
