@@ -12,7 +12,6 @@
         <module>basic-spring-kafka-processor</module>
         <module>complex-spring-kafka-processor</module>
         <module>FavouriteFood</module>
-        <module>spring-kafka-consumer</module>
         <module>WordCounter</module>
     </modules>
 
