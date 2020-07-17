@@ -6,6 +6,7 @@ These projects include:
 * WordCounter -  Counts the number of times a word have been streamed. ie Hello 5
 * FavouriteFood - A running count on a favourite food associated with users. Its important to note when a person favourite food changes, the food count will change
 * spring-kafka-processor - Counts the number of times a word have been streamed using a spring boot application. Displays stream information every 5 seconds
+* spring-kafka-consumer - A simple kafka consumer service which consumers of two topics.The first topic expects a Player object value while the other topic expects a Json string value
 
 ## Getting Started
 Please follow the below steps to setup the solution on your machine. 
@@ -60,11 +61,7 @@ Please follow the below steps to setup the solution on your machine.
     --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
 ```
 #### Start Kafka Stream Application
-* Using the cmd from the Kafka topic creation (or open a new cmd)
-* Run the application specifying the full qualified name space
-```
-.\bin\windows\kafka-run-class.bat org.apache.kafka.streams.firstStreamsApplication
-```
+* From Intellj Run the Application
 #### Notes
 * Do not close any cmd prompts when running kafka
 * Kafka has been setup using the default settings
